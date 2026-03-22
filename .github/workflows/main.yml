@@ -18,3 +18,4 @@ jobs:
   ui-testing:
     needs: api-testing
     uses: ./.github/workflows/playwright.yml
+    secrets: inherit
