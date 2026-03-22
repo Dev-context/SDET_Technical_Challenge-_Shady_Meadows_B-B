@@ -19,3 +19,37 @@ jobs:
     needs: api-testing
     uses: ./.github/workflows/playwright.yml
     secrets: inherit
+
+  deploy-reports:
+    needs: [api-testing, ui-testing]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Karate Results
+        uses: actions/download-artifact@v4
+        with:
+          name: karate-reports
+          path: public/karate
+
+      - name: Download Playwright Results
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: public/playwright
+
+      - name: Create Landing Page
+        run: |
+          echo "<html><body style='font-family: Arial; padding: 50px; background-color: #f4f7f6;'>" > public/index.html
+          echo "<div style='background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);'>" >> public/index.html
+          echo "<h1 style='color: #2c3e50;'>🚀 Dashboard de Qualidade - Shady Meadows</h1>" >> public/index.html
+          echo "<p style='color: #7f8c8d;'>Última execução: $(date +'%d/%m/%Y %H:%M:%S')</p><hr>" >> public/index.html
+          echo "<ul style='list-style: none; padding: 0;'>" >> public/index.html
+          echo "<li style='margin: 20px 0;'><a href='karate/karate-summary.html' style='text-decoration: none; color: white; background: #00b894; padding: 10px 20px; border-radius: 5px;'>📂 Ver Relatório de API (Karate)</a></li>" >> public/index.html
+          echo "<li style='margin: 20px 0;'><a href='playwright/index.html' style='text-decoration: none; color: white; background: #0984e3; padding: 10px 20px; border-radius: 5px;'>🖥️ Ver Relatório de UI (Playwright)</a></li>" >> public/index.html
+          echo "</ul></div></body></html>" >> public/index.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

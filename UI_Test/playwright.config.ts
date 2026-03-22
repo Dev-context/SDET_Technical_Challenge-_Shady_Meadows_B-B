@@ -14,10 +14,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: [
-    ['html'],
-    ['allure-playwright', { outputFolder: 'allure-results' }],
-  ],
+  reporter: [['html', { outputFolder: 'playwright-report' }]],
   use: {
     baseURL: 'https://automationintesting.online/',
     trace: 'on-first-retry',
