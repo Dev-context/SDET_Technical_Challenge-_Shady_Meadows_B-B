@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"51e558a6-a291-4fac-b802-096f9a64f941",karate_version:"1.5.0",karate_meta:null});
+  }
+});
+</script>
+
+    <title>feature.bookings.bookings</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div>dev</div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2026-03-22 06:00:36 PM</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:37]"><span>[1:37]</span> <span>Booking creation</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">feature/bookings/bookings.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Testing booking endpoint</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:37]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:37]</span>
+                <span class="scenario-name">Booking creation</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1997</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:37]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.3">
+      <div class="step-ref bg-step">3</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.3">18:00:34.837 karate.env system property was: dev 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def bookingRequest = read(&#39;classpath:json/request/booking/request.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">49</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def bookingResponse = read(&#39;classpath:json/response/booking/response.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def dataGenerator = Java.type(&#39;helpers.DataGenerator&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure logPrettyRequest = true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure logPrettyResponse = true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref bg-step">11</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def findRoom =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">14</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.11">function() {
+  while(true) {
+    var dates = dataGenerator.getRandomPairOfDates()
+    var res = karate.call(&#39;classpath:helpers/featuresHelpers/getrooms.feature&#39;, 
+                    { checkin: dates.checkin, checkout: dates.checkout })
+    if(res.response.rooms &amp;&amp; res.response.rooms.length &gt; 0) {
+        return { 
+              roomid: res.response.rooms[0].roomid,
+              checkin: dates.checkin, 
+              checkout: dates.checkout
+          }
+    }
+        karate.log(&#39;Trying new date... no rooms for :&#39;, dates.checkin);
+        java.lang.Thread.sleep(500);
+        
+  }
+      
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:37]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref bg-step">34</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def roomInfo = findRoom()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1270</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.34.0.call">
+        <div class="step-ref bg-step">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">helpers.featuresHelpers.getrooms</div>
+      </div>
+      <div class="time-cell passed">1213</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.34.0.call">
+    <div class="step-container" id="0.34.0.call.0.5">
+      <div class="step-ref bg-step">5</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.34.0.call">
+    <div class="step-container" id="0.34.0.call.0.8">
+      <div class="step-ref bg-step">8</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;room&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.34.0.call">
+    <div class="step-container" id="0.34.0.call.0.9">
+      <div class="step-ref bg-step">9</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param checkin = checkin</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.34.0.call">
+    <div class="step-container" id="0.34.0.call.0.10">
+      <div class="step-ref bg-step">10</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param checkout = checkout</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.34.0.call">
+    <div class="step-container" id="0.34.0.call.0.11">
+      <div class="step-ref bg-step">11</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1210</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.34.0.call.0.11">18:00:35.499 request:
+1 &gt; GET https://automationintesting.online/api/room?checkin=2026-04-11&amp;checkout=2026-04-13
+1 &gt; Accept: application/json
+1 &gt; Content-Type: application/json
+1 &gt; User-Agent: Karate-Automation-SEDET
+1 &gt; Host: automationintesting.online
+1 &gt; Connection: Keep-Alive
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:00:36.221 response time in milliseconds: 716
+1 &lt; 200
+1 &lt; Date: Sun, 22 Mar 2026 18:00:36 GMT
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+1 &lt; x-railway-edge: railway/us-east4-eqdc4a
+1 &lt; x-railway-request-id: PYjecvDZR-S5mbARc9o55Q
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=f6oy%2BSnRNv4bz85sarL1c3XkrjMGMaRXF3Z3oVH8gXo5NeNUpKRLXsAs8JGI2sblq2vdMk2zhcGrDNHvjfnOYosMQ6KValeeShzd13LR5rHPHKpoHa8sxn87&quot;}]}
+1 &lt; CF-RAY: 9e0718c989e31fe5-IAD
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{
+  &quot;rooms&quot;: [
+    {
+      &quot;roomid&quot;: 1,
+      &quot;roomName&quot;: &quot;101&quot;,
+      &quot;type&quot;: &quot;Single&quot;,
+      &quot;accessible&quot;: true,
+      &quot;image&quot;: &quot;/images/room1.jpg&quot;,
+      &quot;description&quot;: &quot;Aenean porttitor mauris sit amet lacinia molestie. In posuere accumsan aliquet. Maecenas sit amet nisl massa. Interdum et malesuada fames ac ante.&quot;,
+      &quot;features&quot;: [
+        &quot;TV&quot;,
+        &quot;WiFi&quot;,
+        &quot;Safe&quot;
+      ],
+      &quot;roomPrice&quot;: 100
+    },
+    {
+      &quot;roomid&quot;: 2,
+      &quot;roomName&quot;: &quot;102&quot;,
+      &quot;type&quot;: &quot;Double&quot;,
+      &quot;accessible&quot;: true,
+      &quot;image&quot;: &quot;/images/room2.jpg&quot;,
+      &quot;description&quot;: &quot;Vestibulum sollicitudin, lectus ac mollis consequat, lorem orci ultrices tellus, eleifend euismod tortor dui egestas erat. Phasellus et ipsum nisl. &quot;,
+      &quot;features&quot;: [
+        &quot;TV&quot;,
+        &quot;Radio&quot;,
+        &quot;Safe&quot;
+      ],
+      &quot;roomPrice&quot;: 150
+    },
+    {
+      &quot;roomid&quot;: 3,
+      &quot;roomName&quot;: &quot;103&quot;,
+      &quot;type&quot;: &quot;Suite&quot;,
+      &quot;accessible&quot;: true,
+      &quot;image&quot;: &quot;/images/room3.jpg&quot;,
+      &quot;description&quot;: &quot;Etiam metus metus, fringilla ac sagittis id, consequat vel neque. Nunc commodo quis nisl nec posuere. Etiam at accumsan ex. &quot;,
+      &quot;features&quot;: [
+        &quot;Radio&quot;,
+        &quot;WiFi&quot;,
+        &quot;Safe&quot;
+      ],
+      &quot;roomPrice&quot;: 225
+    }
+  ]
+}
+
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.34.0.call">
+    <div class="step-container" id="0.34.0.call.0.12">
+      <div class="step-ref bg-step">12</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;booking&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># SET request json from the file with Random values</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.40">
+      <div class="step-ref passed">40</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set bookingRequest.roomid = parseInt(roomInfo.roomid)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set bookingRequest.firstname = dataGenerator.getRandomFirstName()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">169</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set bookingRequest.lastname = dataGenerator.getRandomLastName()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.43">
+      <div class="step-ref passed">43</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set bookingRequest.depositpaid = dataGenerator.getRandomDepositpaid()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set bookingRequest.bookingdates = { checkin: &#39;#(roomInfo.checkin)&#39;, checkout: &#39;#(roomInfo.checkout)&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print bookingRequest</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.46">18:00:36.411 [print] {
+  &quot;roomid&quot;: 1,
+  &quot;firstname&quot;: &quot;Wiley&quot;,
+  &quot;lastname&quot;: &quot;Smitham&quot;,
+  &quot;depositpaid&quot;: false,
+  &quot;bookingdates&quot;: {
+    &quot;checkin&quot;: &quot;2026-04-11&quot;,
+    &quot;checkout&quot;: &quot;2026-04-13&quot;
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request bookingRequest</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">465</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.48">18:00:36.440 request:
+1 &gt; POST https://automationintesting.online/api/booking
+1 &gt; Accept: application/json
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; User-Agent: Karate-Automation-SEDET
+1 &gt; Content-Length: 137
+1 &gt; Host: automationintesting.online
+1 &gt; Connection: Keep-Alive
+1 &gt; Accept-Encoding: gzip,deflate
+{
+  &quot;roomid&quot;: 1,
+  &quot;firstname&quot;: &quot;Wiley&quot;,
+  &quot;lastname&quot;: &quot;Smitham&quot;,
+  &quot;depositpaid&quot;: false,
+  &quot;bookingdates&quot;: {
+    &quot;checkin&quot;: &quot;2026-04-11&quot;,
+    &quot;checkout&quot;: &quot;2026-04-13&quot;
+  }
+}
+
+
+18:00:36.875 response time in milliseconds: 434
+1 &lt; 201
+1 &lt; Date: Sun, 22 Mar 2026 18:00:36 GMT
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+1 &lt; x-railway-edge: railway/us-east4-eqdc4a
+1 &lt; x-railway-request-id: gEchJm_sTLejBo35woOzXw
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=jzPh57X2AECGLrVy0udbTJaNDmmewe6WJupeErzFCYgX0wtAm1DNtHxhysrPZtoZbC0VFck7BrE0nWaXkX8%2B%2BroqqgZNU7yhtpgC2ap1cPv4bc4IyvOiJZAB&quot;}]}
+1 &lt; CF-RAY: 9e0718cbffe3d657-IAD
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{
+  &quot;bookingid&quot;: 11,
+  &quot;roomid&quot;: 1,
+  &quot;firstname&quot;: &quot;Wiley&quot;,
+  &quot;lastname&quot;: &quot;Smitham&quot;,
+  &quot;depositpaid&quot;: false,
+  &quot;bookingdates&quot;: {
+    &quot;checkin&quot;: &quot;2026-04-11&quot;,
+    &quot;checkout&quot;: &quot;2026-04-13&quot;
+  }
+}
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.50">18:00:36.879 [print] {
+  &quot;bookingid&quot;: 11,
+  &quot;roomid&quot;: 1,
+  &quot;firstname&quot;: &quot;Wiley&quot;,
+  &quot;lastname&quot;: &quot;Smitham&quot;,
+  &quot;depositpaid&quot;: false,
+  &quot;bookingdates&quot;: {
+    &quot;checkin&quot;: &quot;2026-04-11&quot;,
+    &quot;checkout&quot;: &quot;2026-04-13&quot;
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == &#39;#(^bookingRequest)&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

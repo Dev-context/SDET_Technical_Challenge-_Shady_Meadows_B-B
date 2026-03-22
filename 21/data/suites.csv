@@ -1,3 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","892","HomePage Test","chromium","Sun Mar 22 18:00:41 UTC 2026","passed","Sun Mar 22 18:00:42 UTC 2026","Public Home Page Tests","publicHomePage.spec.ts","",""
-"","1815","User Admin LoggedIn with success","chromium","Sun Mar 22 18:00:38 UTC 2026","failed","Sun Mar 22 18:00:40 UTC 2026","Login Test suite","login.spec.ts","",""

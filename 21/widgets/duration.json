@@ -1,1 +1,0 @@
-[{"uid":"1a281cf89b23a273","name":"HomePage Test","time":{"start":1774202441220,"stop":1774202442112,"duration":892},"status":"passed","severity":"normal"},{"uid":"7654d45e21275014","name":"User Admin LoggedIn with success","time":{"start":1774202438232,"stop":1774202440047,"duration":1815},"status":"failed","severity":"normal"}]
