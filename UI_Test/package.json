@@ -9,7 +9,7 @@
     "test:sanity": "playwright test --grep @Sanity",
     "lint": "eslint .. --fix",
     "format": "prettier --write ..",
-    "prepare": "cd .. && npx husky UI_Test/.husky"
+    "prepare": "cd .. && npx husky UI_Test/.husky && git config core.hooksPath UI_Test/.husky"
   },
   "lint-staged": {
     "../Karate_API_Test/**/*.{js,ts}": [
