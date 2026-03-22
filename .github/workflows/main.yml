@@ -6,9 +6,15 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   api-testing:
     uses: ./.github/workflows/karate-tests.yml
 
   ui-testing:
+    needs: api-testing
     uses: ./.github/workflows/playwright.yml

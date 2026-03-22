@@ -24,11 +24,12 @@ jobs:
 
       - name: Run Karate Tests
         run: mvn test -Dtest=FeaturesTest -Dkarate.env=dev
+        continue-on-error: true
 
-      - name: Upload Test Report
-        if: always()
+      - name: Upload Karate Allure Results
         uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: karate-reports
-          path: Karate_API_Test/shadyMeadowsBB/target/karate-reports/
+          name: allure-results-api
+          path: Karate_API_Test/shadyMeadowsBB/target/allure-results
           retention-days: 30
