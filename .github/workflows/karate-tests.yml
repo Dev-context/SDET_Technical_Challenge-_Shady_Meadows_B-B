@@ -23,7 +23,7 @@ jobs:
           cache: 'maven'
 
       - name: Run Karate Tests
-        run: mvn test -Dtest=TestRunner -Dkarate.env=dev
+        run: mvn test -Dtest=FeaturesTest -Dkarate.env=dev
 
       - name: Upload Test Report
         if: always()
