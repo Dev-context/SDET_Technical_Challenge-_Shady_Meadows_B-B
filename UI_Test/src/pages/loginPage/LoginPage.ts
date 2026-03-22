@@ -1,7 +1,7 @@
-import { Locator, Page } from "@playwright/test";
-import { waitElementDesapear } from "../../helpers/Loading";
-import { Loading } from "../../globalElements/loading";
-import { ENV } from "../../config/envarioment";
+import { Locator, Page } from '@playwright/test';
+import { waitElementDesapear } from '../../helpers/Loading';
+import { Loading } from '../../globalElements/loading';
+import { ENV } from '../../config/envarioment';
 
 export default class LoginPage {
   private readonly page: Page;
@@ -12,9 +12,9 @@ export default class LoginPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.userName = this.page.getByPlaceholder("Enter username");
-    this.password = this.page.getByPlaceholder("Password");
-    this.loginButton = this.page.getByRole("button", { name: "Login" });
+    this.userName = this.page.getByPlaceholder('Enter username');
+    this.password = this.page.getByPlaceholder('Password');
+    this.loginButton = this.page.getByRole('button', { name: 'Login' });
     this.Loading = new Loading(this.page);
   }
 

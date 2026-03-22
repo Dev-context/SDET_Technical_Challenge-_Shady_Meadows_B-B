@@ -1,5 +1,5 @@
-import { Locator, Page } from "@playwright/test";
-import { ENV } from "../../config/envarioment";
+import { Locator, Page } from '@playwright/test';
+import { ENV } from '../../config/envarioment';
 
 export default class Rooms {
   private readonly page: Page;
@@ -7,15 +7,10 @@ export default class Rooms {
 
   constructor(page: Page) {
     this.page = page;
-    this.roomList = this.page.getByTestId("roomlisting");
+    this.roomList = this.page.getByTestId('roomlisting');
   }
 
   async goTo() {
     await this.page.goto(`/${ENV.ROLE}/rooms`);
-  }
-
-  async getRooms() {
-    for (const room of await this.roomList.all()) {
-    }
   }
 }

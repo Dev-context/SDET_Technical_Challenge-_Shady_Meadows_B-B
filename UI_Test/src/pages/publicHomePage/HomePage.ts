@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page } from '@playwright/test';
 
 export default class HomePage {
   private readonly page: Page;
@@ -8,23 +8,23 @@ export default class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.roomCards = this.page.locator(".room-card");
-    this.contactForm = this.page.locator("#contact form");
+    this.roomCards = this.page.locator('.room-card');
+    this.contactForm = this.page.locator('#contact form');
     this.cardButton = this.page
-      .locator("#rooms")
-      .getByRole("link", { name: "Book now" });
+      .locator('#rooms')
+      .getByRole('link', { name: 'Book now' });
   }
 
   async goTo() {
-    await this.page.goto("");
+    await this.page.goto('');
   }
 
   async getRoomCardsButton() {
     const request = this.page.waitForResponse((response) => {
       return (
-        response.url().includes("api/room") &&
+        response.url().includes('api/room') &&
         response.status() === 200 &&
-        response.request().method() === "GET"
+        response.request().method() === 'GET'
       );
     });
 
