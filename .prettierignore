@@ -1,0 +1,26 @@
+# Dependências
+node_modules/
+
+# Artefactos de Teste
+test-results/
+playwright-report/
+blob-report/
+
+# Autenticação (IMPORTANTE para o seu login persistente)
+playwright/.auth/
+
+# Builds e Pastas Estáticas
+dist/
+build/
+public/
+coverage/
+
+# Ficheiros de Configuração que não precisam de formatação
+package-lock.json
+yarn.lock
+*.min.js
+*.map
+
+# Ficheiros de Sistema
+.DS_Store
+.vscode/
