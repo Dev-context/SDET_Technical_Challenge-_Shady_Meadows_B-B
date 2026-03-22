@@ -34,15 +34,28 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           ROLE: ${{ secrets.ROLE }}
 
-      # 1. Gera o HTML do Allure apenas com os resultados desta rodada
+      # --- LÓGICA DE HISTÓRICO ---
+
+      # 1. Baixa o que já está publicado no GitHub Pages para uma pasta temporária
+      - name: Load Allure history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true # Importante: evita erro se for a primeira vez
+        with:
+          ref: gh-pages
+          path: gh-pages-dir
+
+      # 2. Gera o novo report misturando os resultados atuais com o histórico baixado
       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
           allure_results: UI_Test/allure-results
-          allure_history: allure-report # Pasta temporária para o HTML
+          allure_history: allure-report
+          original_allure_history: gh-pages-dir # Pasta de onde ele puxa o passado
+          keep_reports: 20 # Mantém as últimas 20 execuções no gráfico
 
-      # 2. Envia para o GitHub Pages
+      # 3. Publica o report atualizado (com o novo ponto no gráfico)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: always()

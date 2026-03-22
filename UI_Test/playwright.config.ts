@@ -22,6 +22,8 @@ export default defineConfig({
     baseURL: 'https://automationintesting.online/',
     trace: 'on-first-retry',
     testIdAttribute: 'data-testid',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
   },
 
   projects: [
