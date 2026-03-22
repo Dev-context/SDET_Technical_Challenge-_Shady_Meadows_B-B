@@ -1,14 +1,14 @@
 Feature: Tests for the branding endpoint
    
-Background: 
-        * url 'https://automationintesting.online/api'
-        * configure headers = { Accept: 'application/json; charset=utf-8' }
+Background:
+  * url baseUrl
+  * def responseSchema = read('classpath:json/response/brandings/schema/branding.json')
 
-    Scenario: Get branding informaton
-        Given path 'branding'
-        When method Get
-        Then status 200
-        And match response.contact.name == 'Shady Meadows B&B'
-        And match response.contact.email == '#regex .+@.+'
- 
+Scenario: Get brandings
+    Given path 'branding'
+    When method get
+    Then status 200
+    And match response == responseSchema
+    And match response.contact.name == "Shady Meadows B&B" 
+
         
