@@ -19,10 +19,13 @@ export default class LoginPage {
   }
 
   async goTo() {
-    await this.page.goto(`/${ENV.ROLE}`);
+    const targetUrl = ENV.ROLE ? `/${ENV.ROLE}` : '/admin';
+    await this.page.goto(targetUrl);
+    await this.page.goto(targetUrl, { waitUntil: 'networkidle' });
   }
 
   async makeLogin(userName: string, password: string) {
+    await this.userName.waitFor({ state: 'visible', timeout: 15000 });
     await this.userName.fill(userName);
     await this.password.fill(password);
     await this.loginButton.click();
