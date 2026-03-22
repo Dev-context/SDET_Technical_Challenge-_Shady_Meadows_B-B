@@ -9,7 +9,8 @@ test.describe("Login Test suite", () => {
     login = new LoginPage(page);
     await login.goTo();
   });
-  test("User Admin LoggedIn with success", async () => {
+  test("User Admin LoggedIn with success", async ({ page }) => {
     await login.makeLogin(ENV.USER_NAME, ENV.PASSWORD);
+    expect(page.url()).toContain("Dashboard/Inboxes");
   });
 });

@@ -1,6 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 import { waitElementDesapear } from "../../helpers/Loading";
 import { Loading } from "../../globalElements/loading";
+import { ENV } from "../../config/envarioment";
 
 export default class LoginPage {
   private readonly page: Page;
@@ -18,7 +19,7 @@ export default class LoginPage {
   }
 
   async goTo() {
-    await this.page.goto("");
+    await this.page.goto(`/${ENV.ROLE}`);
   }
 
   async makeLogin(userName: string, password: string) {
