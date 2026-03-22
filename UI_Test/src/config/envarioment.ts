@@ -1,0 +1,5 @@
+export const ENV = {
+  USER_NAME: process.env.USER_NAME ?? "",
+  PASSWORD: process.env.PASSWORD ?? "",
+  ROLE: process.env.ROLE ?? "",
+};
