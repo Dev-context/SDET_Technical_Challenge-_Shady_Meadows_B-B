@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 import { waitElementDesapear } from '../../helpers/Loading';
-import { Loading } from '../../globalElements/loading';
+import { Loading } from '../../globalElements/Loading';
 import { ENV } from '../../config/envarioment';
 
 export default class LoginPage {
