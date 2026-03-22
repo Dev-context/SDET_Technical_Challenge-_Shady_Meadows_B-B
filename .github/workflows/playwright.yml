@@ -34,7 +34,9 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           ROLE: ${{ secrets.ROLE }}
 
-      # --- UNIFICAÇÃO DOS RESULTADOS ---
+      - name: Create Combined Directory
+        run: mkdir -p ../combined-results/api ../combined-results/ui
+        if: always()
 
       - name: Download API Results
         uses: actions/download-artifact@v4
@@ -45,7 +47,7 @@ jobs:
 
       - name: Copy UI Results
         if: always()
-        run: cp -r allure-results ../combined-results/ui
+        run: cp -r allure-results/* ../combined-results/ui/
         working-directory: UI_Test
 
       - name: Load Allure history
