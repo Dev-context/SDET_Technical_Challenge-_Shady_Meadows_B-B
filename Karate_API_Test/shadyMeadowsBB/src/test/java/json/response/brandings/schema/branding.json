@@ -1,0 +1,22 @@
+{
+  "name": "#string",
+  "map": {
+    "latitude": "#number",
+    "longitude": "#number"
+  },
+  "logoUrl": "#string",
+  "description": "#string",
+  "directions": "#string",
+  "contact": {
+    "name": "#string",
+    "phone": "#regex ^[0-9]+$",
+    "email": "#regex ^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+  },
+  "address": {
+    "line1": "#string",
+    "line2": "#string",
+    "postTown": "#string",
+    "county": "#string",
+    "postCode": "#string"
+  }
+}

@@ -1,0 +1,14 @@
+name: SEDET - Manager
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main]
+
+jobs:
+  api-testing:
+    uses: ./.github/workflows/karate-tests.yml
+
+  ui-testing:
+    uses: ./.github/workflows/karate-tests.yml
