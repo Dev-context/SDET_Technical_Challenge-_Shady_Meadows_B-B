@@ -7,15 +7,12 @@
     "test:ui": "playwright test --ui",
     "test": "playwright test",
     "test:sanity": "playwright test --grep @Sanity",
-    "lint": "eslint .. --fix",
-    "format": "prettier --write ..",
-    "prepare": "cd .. && npx husky UI_Test/.husky && git config core.hooksPath UI_Test/.husky"
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "lint-staged": {
-    "../Karate_API_Test/**/*.{js,ts}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
     "src/**/*.{ts,js}": [
       "eslint --fix",
       "prettier --write"
