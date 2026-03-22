@@ -33,43 +33,67 @@ jobs:
           USER_NAME: ${{ secrets.USER_NAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
           ROLE: ${{ secrets.ROLE }}
-
-      - name: Create Combined Directory
-        run: mkdir -p ../combined-results/api ../combined-results/ui
-        if: always()
-
-      - name: Download API Results
-        uses: actions/download-artifact@v4
-        if: always()
-        with:
-          name: allure-results-api
-          path: combined-results/api
-
-      - name: Copy UI Results
-        if: always()
-        run: cp -r allure-results/* ../combined-results/ui/
-        working-directory: UI_Test
-
-      - name: Load Allure history
-        uses: actions/checkout@v4
-        if: always()
+          - name: Run Playwright tests
+        run: npx playwright test
         continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages-dir
+        env:
+          USER_NAME: ${{ secrets.USER_NAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          ROLE: ${{ secrets.ROLE }}
 
-      - name: Build Unified Allure Report
+      # 1. Gera o HTML do Allure apenas com os resultados desta rodada
+      - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
-          allure_results: combined-results
-          allure_history: allure-history
-          keep_reports: 20
+          allure_results: UI_Test/allure-results
+          allure_history: allure-report # Pasta temporária para o HTML
 
+      # 2. Envia para o GitHub Pages
       - name: Deploy to GitHub Pages
-        if: always()
         uses: peaceiris/actions-gh-pages@v3
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: allure-history
+          publish_dir: allure-report
           publish_branch: gh-pages
+
+      # - name: Create Combined Directory
+      #   run: mkdir -p ../combined-results/api ../combined-results/ui
+      #   if: always()
+
+      # - name: Download API Results
+      #   uses: actions/download-artifact@v4
+      #   if: always()
+      #   with:
+      #     name: allure-results-api
+      #     path: combined-results/api
+
+      # - name: Copy UI Results
+      #   if: always()
+      #   run: cp -r allure-results/* ../combined-results/ui/
+      #   working-directory: UI_Test
+
+      # - name: Load Allure history
+      #   uses: actions/checkout@v4
+      #   if: always()
+      #   continue-on-error: true
+      #   with:
+      #     ref: gh-pages
+      #     path: gh-pages-dir
+
+      # - name: Build Unified Allure Report
+      #   uses: simple-elf/allure-report-action@master
+      #   if: always()
+      #   with:
+      #     allure_results: combined-results
+      #     allure_history: allure-history
+      #     keep_reports: 20
+
+      # - name: Deploy to GitHub Pages
+      #   if: always()
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: allure-history
+      #     publish_branch: gh-pages
