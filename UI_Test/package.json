@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "cd .. && npx husky"
   },
   "lint-staged": {
     "src/**/*.{ts,js}": [
