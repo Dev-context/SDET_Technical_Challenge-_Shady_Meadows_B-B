@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"2acaef5e-003c-446a-8359-a833919d879f",karate_version:"1.5.0",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"90cfd050-ad8d-498c-9dbc-81f71031c3d4",karate_version:"1.5.0",karate_meta:null});
   }
 });
 </script>
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-03-23 09:20:56 AM</div>
+    <div>2026-03-23 09:23:10 AM</div>
   </div>
 </div>
 
@@ -81,7 +81,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1488</span>
+              <span>ms:</span>&nbsp;<span>1455</span>
             </div>
           </div>
           <div class="step-row">
@@ -104,7 +104,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -113,7 +113,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.4">09:20:52.447 karate.env system property was: dev 
+  <div class="preformatted" data-parent="0.4">09:23:07.628 karate.env system property was: dev 
 </div>   
 
   
@@ -133,7 +133,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def responseSchema = read(&#39;classpath:json/response/brandings/schema/branding.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">40</div>
+    <div class="time-cell passed">51</div>
   </div>
 
    
@@ -161,7 +161,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;branding&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -189,7 +189,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1430</div>
+    <div class="time-cell passed">1390</div>
   </div>
 
    
@@ -198,7 +198,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.9">09:20:53.070 request:
+  <div class="preformatted" data-parent="0.9">09:23:08.375 request:
 1 &gt; GET https://automationintesting.online/api/branding
 1 &gt; Accept: application/json
 1 &gt; Content-Type: application/json
@@ -208,20 +208,20 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-09:20:53.964 response time in milliseconds: 890
+09:23:09.109 response time in milliseconds: 730
 1 &lt; 200
-1 &lt; Date: Mon, 23 Mar 2026 09:20:53 GMT
+1 &lt; Date: Mon, 23 Mar 2026 09:23:09 GMT
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
 1 &lt; Server: cloudflare
 1 &lt; vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
-1 &lt; x-railway-edge: railway/us-west2
-1 &lt; x-railway-request-id: w1xZ8gFXTKSlrFHpnpoFkQ
+1 &lt; x-railway-edge: railway/us-east4-eqdc4a
+1 &lt; x-railway-request-id: _b8obQnaRpumEapJezItjw
 1 &lt; cf-cache-status: DYNAMIC
 1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=FyWhs7O4quJcHRW5Rp0LeHbeAzEPvGBMqVHLcJYc4lTonfIwQp%2BNLb8Rv71uMpECN%2BFEBHauVm3ZsVEbwqscVvGiaNX5MC2j7q%2F7KEvCFV3wA2bCLi2BlHqY&quot;}]}
-1 &lt; CF-RAY: 9e0c5cdf2b74dc04-SJC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=vqVFrUsAQ4pnjl5eIwklwlaRrrH1gYjvFcX7APlL4fwwQwMoFvyb3IKRcD3TlJK%2B2IaIKzh2YNz07Wm5u%2FPN93%2FAXcAFuVvqdGwByuOQJk4AyjyBVMTJauvv&quot;}]}
+1 &lt; CF-RAY: 9e0c602d29be61d0-ORD
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
 {&quot;name&quot;:&quot;Shady Meadows B&amp;B&quot;,&quot;map&quot;:{&quot;latitude&quot;:52.6351204,&quot;longitude&quot;:1.2733774},&quot;logoUrl&quot;:&quot;/images/rbp-logo.jpg&quot;,&quot;description&quot;:&quot;Welcome to Shady Meadows, a delightful Bed &amp; Breakfast nestled in the hills on Newingtonfordburyshire. A place so beautiful you will never want to leave. All our rooms have comfortable beds and we provide breakfast from the locally sourced supermarket. It is a delightful place.&quot;,&quot;directions&quot;:&quot;Welcome to Shady Meadows, a delightful Bed &amp; Breakfast nestled in the hills on Newingtonfordburyshire. A place so beautiful you will never want to leave. All our rooms have comfortable beds and we provide breakfast from the locally sourced supermarket. It is a delightful place.&quot;,&quot;contact&quot;:{&quot;name&quot;:&quot;Shady Meadows B&amp;B&quot;,&quot;phone&quot;:&quot;012345678901&quot;,&quot;email&quot;:&quot;fake@fakeemail.com&quot;},&quot;address&quot;:{&quot;line1&quot;:&quot;Shady Meadows B&amp;B&quot;,&quot;line2&quot;:&quot;Shadows valley&quot;,&quot;postTown&quot;:&quot;Newingtonfordburyshire&quot;,&quot;county&quot;:&quot;Dilbery&quot;,&quot;postCode&quot;:&quot;N1 1AA&quot;}}
 
@@ -272,7 +272,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response == responseSchema</span>
       </div>
     </div>
-    <div class="time-cell passed">11</div>
+    <div class="time-cell passed">12</div>
   </div>
 
    
