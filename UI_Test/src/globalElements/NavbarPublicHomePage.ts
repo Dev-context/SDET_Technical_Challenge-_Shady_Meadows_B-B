@@ -12,16 +12,27 @@ export default class NavBarPublicHomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.roomsLink = this.page.getByRole('link', { name: 'Rooms' });
-    this.bookLink = this.page.getByRole('link', { name: 'Booking' });
-    this.amenitiesLink = this.page.getByRole('link', { name: 'Amenities' });
-    this.locationLink = this.page.getByRole('link', { name: 'Location' });
-    this.contactLink = this.page.getByRole('link', { name: 'Contact' });
+    this.roomsLink = this.page
+      .locator('.nav-link')
+      .getByRole('link', { name: 'Rooms' })
+      .first();
+    this.bookLink = this.page.getByRole('link', { name: 'Booking' }).first();
+    this.amenitiesLink = this.page
+      .getByRole('link', { name: 'Amenities' })
+      .first();
+    this.locationLink = this.page
+      .getByRole('link', { name: 'Location' })
+      .first();
+    this.contactLink = this.page
+      .locator('.nav-link')
+      .getByRole('link', { name: 'Contact' })
+      .first();
 
-    this.adminLink = this.page.getByRole('link', { name: 'Contact' });
+    this.adminLink = this.page.getByRole('link', { name: 'Admin' }).first();
     this.navbarToggler = this.page
       .getByRole('button')
-      .filter({ has: this.page.locator('.navbar-toggler-icon') });
+      .filter({ has: this.page.locator('.navbar-toggler-icon') })
+      .first();
   }
 
   async navigateToRoomsLink() {

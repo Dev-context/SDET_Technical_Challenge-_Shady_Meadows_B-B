@@ -1,7 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 import { waitElementDesapear } from '../../helpers/Loading';
 import { Loading } from '../../globalElements/Loading';
-import { ENV } from '../../config/envarioment';
 
 export default class LoginPage {
   private readonly page: Page;
@@ -19,9 +18,7 @@ export default class LoginPage {
   }
 
   async goTo() {
-    const targetUrl = ENV.ROLE ? `/${ENV.ROLE}` : '/admin';
-    await this.page.goto(targetUrl);
-    await this.page.goto(targetUrl, { waitUntil: 'networkidle' });
+    await this.page.goto('/admin', { waitUntil: 'networkidle' });
   }
 
   async makeLogin(userName: string, password: string) {

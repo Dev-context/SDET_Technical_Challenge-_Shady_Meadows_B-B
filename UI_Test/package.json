@@ -7,6 +7,8 @@
     "test:ui": "playwright test --ui",
     "test": "playwright test",
     "test:sanity": "playwright test --grep @Sanity",
+    "show-report": "npx playwright show-report",
+    "test:mobile": "npx playwright test --project=mobile-chrome",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write .",
