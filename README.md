@@ -56,6 +56,10 @@ Missing Key Context: Validation errors do not specify which mandatory key is mis
 
 ![alt text](/md/image-5.png)
 
+## Report
+
+[Report](https://dev-context.github.io/SDET_Technical_Challenge-_Shady_Meadows_B-B/)
+
 ## Documentation Links
 
 - [Go to API Automation README](./Karate_API_Test/README.md)
