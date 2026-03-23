@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+cd UI_Test && npx lint-staged

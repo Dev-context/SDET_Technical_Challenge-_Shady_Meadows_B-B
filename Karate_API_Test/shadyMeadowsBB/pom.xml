@@ -1,35 +1,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
- 
     <groupId>online.automationtesting</groupId>
     <artifactId>shadyMeadowsBB</artifactId>
     <version>1</version>
     <packaging>jar</packaging>
- 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
         <maven.compiler.version>3.11.0</maven.compiler.version>
         <maven.surefire.version>3.0.0</maven.surefire.version>
         <karate.version>1.5.0</karate.version>
-    </properties>    
-
-    <dependencies>         
+    </properties>
+    <dependencies>
         <dependency>
             <groupId>io.karatelabs</groupId>
             <artifactId>karate-junit5</artifactId>
             <version>${karate.version}</version>
             <scope>test</scope>
-        </dependency>	
+        </dependency>
         <dependency>
-    <groupId>com.github.javafaker</groupId>
-    <artifactId>javafaker</artifactId>
-    <version>1.0.2</version>
-    <scope>compile</scope>
-</dependency>	
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
-
     <build>
         <testResources>
             <testResource>
@@ -57,8 +53,7 @@
                 <configuration>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                 </configuration>
-            </plugin>          
-        </plugins>        
-    </build>       
-    
+            </plugin>
+        </plugins>
+    </build>
 </project>

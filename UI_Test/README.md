@@ -1,6 +1,6 @@
-# Playwright TS Pro - Automation Academy Practice
+# Shady Meadows B&B - UI Automation
 
-A robust and scalable end-to-end testing framework built with Playwright, TypeScript, and the Page Object Model (POM) pattern. This project is designed for automated testing of the Rahul Shetty Academy Client application.
+A robust and scalable UI testing framework built with Playwright, TypeScript, and the Page Object Model (POM) pattern. This project is designed for automated testing of https://automationintesting.online/
 
 ## 🚀 Features
 
@@ -9,7 +9,7 @@ A robust and scalable end-to-end testing framework built with Playwright, TypeSc
 - **Allure Reporting**: Comprehensive and visual test reports.
 - **Environment Configuration**: Secure management of credentials and environment-specific variables using `dotenv`.
 - **Cross-Browser Testing**: Pre-configured for Chromium, Firefox, and WebKit.
-- **CI/CD Ready**: Includes configurations for Jenkins and Docker.
+- **Github-Actions**: Execute and Generete Report
 
 ## 🛠️ Prerequisites
 
@@ -22,7 +22,7 @@ A robust and scalable end-to-end testing framework built with Playwright, TypeSc
 
    ```bash
    git clone <repository-url>
-   cd playwrigthTsPro
+   cd UI_Test
    ```
 
 2. Install dependencies:
@@ -41,8 +41,9 @@ A robust and scalable end-to-end testing framework built with Playwright, TypeSc
 Create a `.env` file in the root directory and add your credentials:
 
 ```env
-USEREMAIL=your-email@example.com
-USERPASSWORD=your-password
+USER_NAME=your-email@example.com
+PASSWORD=your-password
+ROLE= your-role
 ```
 
 ## 🧪 Running Tests
@@ -65,6 +66,12 @@ npm run test:ui
 npm run show:report
 ```
 
+### Sanity test
+
+```bash
+npm run test:sanity
+```
+
 ## ✨ Code Quality & Formatting
 
 This project uses **ESLint** and **Prettier** to ensure code quality and consistent formatting. **Husky** is configured to run these checks automatically before every commit.
@@ -82,27 +89,13 @@ Husky and lint-staged are set up to automatically lint and format your code when
 ## 📂 Project Structure
 
 - `tests/`: Test scripts (e.g., `login.spec.ts`).
-- `model/`: Page Object classes and locators.
+- `Pages/`: Page Object classes.
 - `config/`: Environment and global configurations.
-- `specs/`: Test plans and documentation.
 - `fixtures/`: Test data and custom fixtures.
 
 ## 📊 Reporting
 
-This project uses **Allure Report** for detailed test execution visualization.
-
-### Allure Installation
-
-1. **Install Allure Commandline**:
-   - **Windows (using Scoop)**: `scoop install allure`
-   - **macOS (using Homebrew)**: `brew install allure`
-   - **Linux**: Follow instructions on the [official Allure website](https://docs.qameta.io/allure/#_installing_a_commandline).
-
-2. **Generate and Open Report**:
-   The project has a built-in script to generate and serve the report:
-   ```bash
-   npm run allure-generate
-   ```
+This project uses \*_Playwright-Report_ for detailed test execution visualization.
 
 ### Default Playwright Report
 
@@ -114,4 +107,28 @@ npm run show:report
 
 ---
 
-_Built with ❤️ for Automation Excellence. Reference: [Rahul Shetty Academy](https://rahulshettyacademy.com/)_
+### Pipeline execution
+
+This project execute a pipeline after execute a follows git commands -
+
+```bash
+  git checkout dev
+  # add some modification
+  git add .
+  # commit something
+  git commit -m "message"
+  # Send for GitHub repo
+  git push -u dev
+```
+
+OR:
+
+You can access this project in Github and execute [github-action](https://github.com/Dev-context/SDET_Technical_Challenge-_Shady_Meadows_B-B/actions)
+
+[Playwriht-report](https://dev-context.github.io/SDET_Technical_Challenge-_Shady_Meadows_B-B/playwright/index.html)
+
+### Documentation main link
+
+- [Back to Main Project Page](../README.md#-key-features)
+
+_Built with ❤️ for Automation Excellence.: []_

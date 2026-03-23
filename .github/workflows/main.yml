@@ -6,9 +6,58 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   api-testing:
     uses: ./.github/workflows/karate-tests.yml
 
   ui-testing:
+    needs: api-testing
     uses: ./.github/workflows/playwright.yml
+    secrets: inherit
+
+  deploy-reports:
+    needs: [api-testing, ui-testing]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Karate Results
+        uses: actions/download-artifact@v4
+        with:
+          name: karate-reports
+          path: public/karate
+
+      - name: Download Playwright Results
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: public/playwright
+
+      - name: Create Landing Page
+        run: |
+          echo "<html><body style='font-family: Arial, sans-serif; padding: 50px; background-color: #f4f7f6;'>" > public/index.html
+          echo "<div style='max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);'>" >> public/index.html
+          echo "<h1 style='color: #2c3e50;'>🚀 Quality Assurance Dashboard - Shady Meadows</h1>" >> public/index.html
+          echo "<p style='color: #7f8c8d;'><strong>Last Execution:</strong> $(date +'%Y-%m-%d %H:%M:%S') UTC</p><hr style='border: 0; height: 1px; background: #eee; margin: 20px 0;'>" >> public/index.html
+          echo "<p style='color: #34495e;'>Select a report to view the test execution details:</p>" >> public/index.html
+          echo "<ul style='list-style: none; padding: 0;'>" >> public/index.html
+
+          # API Report Link
+          echo "<li style='margin: 20px 0;'><a href='karate/karate-summary.html' style='text-decoration: none; color: white; background: #00b894; padding: 12px 25px; border-radius: 5px; display: inline-block; font-weight: bold;'>📡 View API Reports (Karate DSL)</a></li>" >> public/index.html
+
+          # UI Report Link
+          echo "<li style='margin: 20px 0;'><a href='playwright/index.html' style='text-decoration: none; color: white; background: #0984e3; padding: 12px 25px; border-radius: 5px; display: inline-block; font-weight: bold;'>🖥️ View UI Reports (Playwright)</a></li>" >> public/index.html
+
+          echo "</ul>" >> public/index.html
+          echo "<div style='margin-top: 30px; font-size: 12px; color: #bdc3c7;'>Orchestrated by GitHub Actions & SEDET Manager</div>" >> public/index.html
+          echo "</div></body></html>" >> public/index.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

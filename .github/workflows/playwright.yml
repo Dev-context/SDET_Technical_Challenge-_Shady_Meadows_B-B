@@ -6,20 +6,42 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: UI_Test
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          cache: 'npm'
+          cache-dependency-path: UI_Test/package-lock.json
+
       - name: Install dependencies
         run: npm ci
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+
       - name: Run Playwright tests
         run: npx playwright test
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
+        continue-on-error: true
+        env:
+          USER_NAME: ${{ secrets.USER_NAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          ROLE: ${{ secrets.ROLE }}
+
+      # --- LÓGICA NATIVA DO PLAYWRIGHT ---
+
+      # 1. Disponibiliza o relatório HTML para o orquestrador (Manager)
+      - name: Upload Playwright Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+          name: playwright-report # O nome que o Manager espera buscar
+          # Por padrão, o Playwright gera na pasta playwright-report
+          path: UI_Test/playwright-report/
+          retention-days: 7

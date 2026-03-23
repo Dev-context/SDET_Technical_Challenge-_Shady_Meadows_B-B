@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page } from '@playwright/test';
 
 export class Loading {
   private readonly page: Page;
@@ -6,7 +6,7 @@ export class Loading {
 
   constructor(page: Page) {
     this.page = page;
-    this.loading = this.page.getByRole("status");
+    this.loading = this.page.getByRole('status');
   }
 
   public get loadingElement(): Locator {
