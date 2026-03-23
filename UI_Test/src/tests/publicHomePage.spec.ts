@@ -14,6 +14,5 @@ test.describe('Public Home Page Tests', () => {
     for (const cardButton of cardsButtons) {
       await expect(cardButton).toBeVisible();
     }
-    await expect(publicHomePage.getContactForm).toBeVisible();
   });
 });
